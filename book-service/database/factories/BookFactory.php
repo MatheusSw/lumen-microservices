@@ -15,7 +15,9 @@ class BookFactory extends Factory
     	    'name' => $this->faker->name(),
             'number_of_pages' => $this->faker->numberBetween(10, 1000),
             'description' => $this->faker->realText(100),
-            'author_id' => 1, //Boy-oh-boy should this call the author API or requires a Saga?
+            //TODO URGENT: CHANGE THIS numberBetween to either a saga result or a API call
+            //this is such a shenanigan I don't even want to talk about it
+            'author_id' => $this->faker->numberBetween(1,50),
     	];
     }
 }
