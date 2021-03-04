@@ -12,7 +12,7 @@ class BookFactory extends Factory
     public function definition(): array
     {
     	return [
-    	    'name' => $this->faker->name(),
+    	    'name' => $this->faker->sentence(3),
             'number_of_pages' => $this->faker->numberBetween(10, 1000),
             'description' => $this->faker->realText(100),
             //TODO URGENT: CHANGE THIS numberBetween to either a saga result or a API call
