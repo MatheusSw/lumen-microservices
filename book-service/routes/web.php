@@ -13,6 +13,11 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+//No need to prefix with API as the gateway will take care of that for us
+//I wont use any middlewares for authentication here as this is only a PoC
+
+$router->get('/books', 'BookController@index');
+$router->get('/books/{id}', 'BookController@show');
+$router->post('/books', 'BookController@store');
+$router->put('/books/{id}', 'BookController@update');
+$router->delete('/books/{id}', 'BookController@destroy');
